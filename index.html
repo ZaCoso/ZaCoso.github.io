@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="icon" href="FoTo/001.jpg" type="image/x-icon">
+    <link rel="icon" href="file:///D:\Col\Col 2024\fabri\angulo\FoTo/001.jpg" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control de Ángulo con Motor y Raspberry Pi Pico</title>
+    <title>Control Ángulo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,7 +31,7 @@
             cursor: pointer;
         }
         .reiniciar-btn img {
-            width: 100px; /* Aumenté el tamaño de la imagen a 100px */
+            width: 50px;
             height: auto;
         }
         section {
@@ -130,17 +130,17 @@
         }
         .stars .star.filled::before {
             color: #ffb400; /* Color de la estrella llena */
-        }
+        }        
     </style>
 </head>
 <body>
 
 <header>
     <button class="reiniciar-btn" onclick="location.reload();">
-        <img src="FoTo/002.png" alt="Reiniciar Página" >
+        <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/002.png" alt="Reiniciar Página" >
     </button>
-    <h1>Control de Ángulo con Motor y Raspberry Pi Pico</h1>
-    <p>Un proyecto para controlar la aguja mediante engranajes y un motor paso a paso</p>
+    <h1>Control PID de ángulo de motor con Raspberry Pi Pico</h1>
+    <p>Un proyecto para controlar la aguja mediante engranajes y un motor</p>
 </header>
 
 <section>
@@ -173,6 +173,17 @@
             <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/3.jpg" alt="Imagen 1">
             <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/15.jpg" alt="Imagen 2">
             <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/17.jpg" alt="Imagen 3">
+            <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/5.jpg" alt="Imagen 4">
+            <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/16.jpg" alt="Imagen 5">
+            <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/17.jpg" alt="Imagen 6">
+            <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/19.jpg" alt="Imagen 7">
+            <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/18.jpg" alt="Imagen 8">
+            <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/21.jpg" alt="Imagen 9">
+            <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/27.jpg" alt="Imagen 10">
+            <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/28.jpg" alt="Imagen 11">
+            <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/13.jpg" alt="Imagen 12">
+            <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/12.jpg" alt="Imagen 13">
+            <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/14.jpg" alt="Imagen 14">
         </div>
         <div class="carousel-navigation">
             <button class="carousel-button" id="prevBtn">&#10094;</button>
@@ -231,21 +242,6 @@
 </section>
 
 <section>
-    <h2>Galería de Imágenes</h2>
-    <div class="carousel">
-        <div class="carousel-container">
-            <img src="file:///D:/Col/Col%202024/fabri/angulo/FoTo/3.jpg" alt="Imagen 1">
-            <img src="file:///D:/Col/Col%202024/fabri/angulo/FoTo/15.jpg" alt="Imagen 2">
-            <img src="file:///D:/Col/Col%202024/fabri/angulo/FoTo/17.jpg" alt="Imagen 3">
-        </div>
-        <div class="carousel-navigation">
-            <button class="carousel-button" id="prevBtn">&#10094;</button>
-            <button class="carousel-button" id="nextBtn">&#10095;</button>
-        </div>
-    </div>
-</section>
-
-<section>
     <h2>Reseñas</h2>
     <div class="reviews">
         <div class="review">
@@ -256,7 +252,7 @@
                 <div class="star filled"></div>
                 <div class="star filled"></div>
                 <div class="star filled"></div>
-            </div>
+            </div>            
         </div>
         <div class="review">
             <div class="profile">ResistorRebelde - Profesor de Electrónica</div>
@@ -266,9 +262,9 @@
                 <div class="star filled"></div>
                 <div class="star filled"></div>
                 <div class="star filled"></div>
-                <div class="star filled"></div>
-            </div>
+            </div>                  
         </div>
+  
         <div class="review">
             <div class="profile">TransistorTitan - Ingeniero en Electrónica</div>
             <p>Fácil de entender y realizar. La parte más complicada fue la calibración del motor, pero con paciencia todo se logra.</p>
@@ -277,7 +273,7 @@
                 <div class="star filled"></div>
                 <div class="star filled"></div>
                 <div class="star"></div>
-            </div>
+            </div>        
         </div>
     </div>
 </section>
@@ -305,3 +301,4 @@
 
 </body>
 </html>
+
