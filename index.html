@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" href="file:///D:\Col\Col 2024\fabri\angulo\FoTo/001.jpg" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Ángulo con Motor y Raspberry Pi Pico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .reiniciar-btn {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .reiniciar-btn img {
+            width: 100px; /* Aumenté el tamaño de la imagen a 100px */
+            height: auto;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .carousel {
+            position: relative;
+            width: 80%; /* Ajustamos el ancho del carrusel */
+            margin: 0 auto; /* Centra el carrusel en la pantalla */
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .carousel-container {
+            display: flex;
+            transition: transform 1s ease;
+        }
+        .carousel-container img {
+            width: 60%; /* Ajustamos el tamaño de las imágenes */
+            height: auto;
+            margin: 0 auto; /* Centra las imágenes dentro del carrusel */
+        }
+        .carousel-navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 30px;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        .integrantes {
+            margin-top: 20px;
+        }
+        .integrante {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .integrante h3 {
+            margin-bottom: 10px;
+        }
+        /* Estilos para las reseñas */
+        .reviews {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .review {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+        .profile {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .review p {
+            font-style: italic;
+            color: #555;
+        }
+        .stars {
+            display: inline-block;
+            position: relative;
+            font-size: 20px;
+            color: #ccc;
+        }
+        .stars .star {
+            display: inline-block;
+            position: relative;
+        }
+        .stars .star::before {
+            content: "★";
+            color: #ccc;
+        }
+        .stars .star.filled::before {
+            color: #ffb400; /* Color de la estrella llena */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <button class="reiniciar-btn" onclick="location.reload();">
+        <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/002.png" alt="Reiniciar Página" >
+    </button>
+    <h1>Control de Ángulo con Motor y Raspberry Pi Pico</h1>
+    <p>Un proyecto para controlar la aguja mediante engranajes y un motor paso a paso</p>
+</header>
+
+<section>
+    <h2>Descripción del Proyecto</h2>
+    <p>
+        Este proyecto consiste en un control de ángulo de una aguja mediante un motor paso a paso,
+        utilizando una Raspberry Pi Pico para el control. El sistema se basa en un conjunto de engranajes,
+        uno grande conectado al motor y otro pequeño que mueve la aguja. El control es altamente preciso,
+        permitiendo ajustar el ángulo de la aguja con gran exactitud. La Raspberry Pi Pico se encarga de
+        interpretar las señales y gestionar el movimiento del motor.
+    </p>
+</section>
+
+<section>
+    <h2>Componentes</h2>
+    <ul>
+        <li>Raspberry Pi Pico</li>
+        <li>Motor paso a paso</li>
+        <li>Engranaje grande</li>
+        <li>Engranaje pequeño</li>
+        <li>Fuente de alimentación</li>
+        <li>Otros componentes...</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Galería de Imágenes</h2>
+    <div class="carousel">
+        <div class="carousel-container">
+            <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/3.jpg" alt="Imagen 1">
+            <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/15.jpg" alt="Imagen 2">
+            <img src="file:///D:\Col\Col 2024\fabri\angulo\FoTo/17.jpg" alt="Imagen 3">
+        </div>
+        <div class="carousel-navigation">
+            <button class="carousel-button" id="prevBtn">&#10094;</button>
+            <button class="carousel-button" id="nextBtn">&#10095;</button>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Video del Proyecto</h2>
+    <p>A continuación puedes ver el video del proyecto en YouTube:</p>
+    <div>
+        <iframe src="https://www.youtube.com/embed/EmbxgZw8Rv4" allowfullscreen></iframe>
+    </div>
+</section>
+
+<section class="integrantes">
+    <h2>Integrantes del Proyecto</h2>
+    <div class="integrante">
+        <h3>Santiago Zacarías</h3>
+        <ul>
+            <li>Realización de informes técnicos</li>
+            <li>Documentación e investigación</li>
+            <li>Fabricación de circuitos impresos</li>
+        </ul>
+    </div>
+    <div class="integrante">
+        <h3>Juan Montilla</h3>
+        <ul>
+            <li>Diseño del código</li>
+            <li>Ensayos estructurales y circuitales</li>
+        </ul>
+    </div>
+    <div class="integrante">
+        <h3>Juan Isola</h3>
+        <ul>
+            <li>Diseño de carcasa y engranajes</li>
+            <li>Fabricación de ruedas y circuito</li>
+        </ul>
+    </div>
+    <div class="integrante">
+        <h3>Rodrigo Lin</h3>
+        <ul>
+            <li>Implementación del hardware (ensamblaje)</li>
+            <li>Ensayos estructurales y circuitales</li>
+            <li>Control de calidad de los componentes</li>
+        </ul>
+    </div>
+    <div class="integrante">
+        <h3>Celene Ramirez</h3>
+        <ul>
+            <li>Optimización de los componentes</li>
+            <li>Puesta a punto</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2>Galería de Imágenes</h2>
+    <div class="carousel">
+        <div class="carousel-container">
+            <img src="file:///D:/Col/Col%202024/fabri/angulo/FoTo/3.jpg" alt="Imagen 1">
+            <img src="file:///D:/Col/Col%202024/fabri/angulo/FoTo/15.jpg" alt="Imagen 2">
+            <img src="file:///D:/Col/Col%202024/fabri/angulo/FoTo/17.jpg" alt="Imagen 3">
+        </div>
+        <div class="carousel-navigation">
+            <button class="carousel-button" id="prevBtn">&#10094;</button>
+            <button class="carousel-button" id="nextBtn">&#10095;</button>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Reseñas</h2>
+    <div class="reviews">
+        <div class="review">
+            <div class="profile">Elec_Volt - Estudiante de Ingeniería</div>
+            <p>Este proyecto es excelente, muy fácil de armar y controlar. Recomiendo utilizar engranajes de buena calidad para evitar deslizamientos.</p>
+            <div class="stars">
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+            </div>
+        </div>
+        <div class="review">
+            <div class="profile">ResistorRebelde - Profesor de Electrónica</div>
+            <p>Me encantó el control preciso del ángulo. La Raspberry Pi Pico es ideal para este tipo de proyectos.</p>
+            <div class="stars">
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+            </div>
+        </div>
+        <div class="review">
+            <div class="profile">TransistorTitan - Ingeniero en Electrónica</div>
+            <p>Fácil de entender y realizar. La parte más complicada fue la calibración del motor, pero con paciencia todo se logra.</p>
+            <div class="stars">
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star filled"></div>
+                <div class="star"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel-container img');
+    const totalImages = images.length;
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalImages;
+        updateCarousel();
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        updateCarousel();
+    });
+
+    function updateCarousel() {
+        const offset = -currentIndex * 60 + '%';
+        document.querySelector('.carousel-container').style.transform = `translateX(${offset})`;
+    }
+</script>
+
+</body>
+</html>
