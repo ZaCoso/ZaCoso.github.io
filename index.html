@@ -140,6 +140,32 @@
         .stars .star.filled::before {
             color: #ffb400;
         }
+footer {
+    background-color: #333; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    display: flex; /* Usamos flexbox para alinearlo en una fila */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+    padding: 10px; /* Espaciado alrededor */
+}
+
+footer p {
+    margin: 0; /* Eliminar margen por defecto */
+    flex-grow: 1; /* Hace que el segundo elemento ocupe el espacio disponible */
+    text-align: center; /* Centra el texto del medio */
+}
+
+footer p:nth-child(2) {
+    text-align: center; /* Centra el segundo elemento */
+}
+
+footer p:nth-child(1) {
+    text-align: left; /* Alinea el primer elemento a la izquierda */
+}
+
+footer p:nth-child(3) {
+    text-align: right; /* Alinea el tercer elemento a la derecha */
+}
     </style>
 </head>
 <body>
@@ -294,6 +320,11 @@
         </div>
     </div>
 </section>
+<footer>
+    <p>6°2da AV</p>
+    <p>Comisión "B"</p>
+    <p>Computadoras y Sistemas de Control</p>
+</footer>
 
 <script>
     let currentIndex = 0;
