@@ -243,6 +243,23 @@
             font-size: 14px;
             color: #555;
         }
+        .navbar-collapse {
+            width: 100%;             /* Asegura que el contenedor ocupe todo el ancho */
+            display: flex;           /* Usamos Flexbox en el contenedor principal */
+            justify-content: flex-end; /* Alinea los elementos a la derecha */
+        }
+
+        .navbar-links {
+            display: flex;           /* Usamos Flexbox para que los enlaces estén en línea */
+            gap: 20px;               /* Espacio entre los elementos */
+        }
+
+        /* Opcional: para quitar el estilo de los enlaces */
+        .nav-link {
+            text-decoration: none;   /* Eliminamos el subrayado */
+            color: #FFFFFF;             /* Cambiar el color si es necesario */
+            font-weight: bold;       /* Añadir negrita si se desea */
+        }
 
     </style>
 </head>
@@ -258,10 +275,21 @@
             <h1>Control PID de ángulo de motor con Raspberry Pi Pico</h1>
             <p>Un proyecto para controlar la aguja mediante engranajes y un motor</p>
         </div>
+
+        <div class="navbar-collapse" id="navbarCollapse">
+            <div class="navbar-links">
+                <a class="nav-link" href="#Index1">Descripción</a>
+                <a class="nav-link" href="#Index2">Componentes</a>
+                <a class="nav-link" href="#Index3">Galería</a>
+                <a class="nav-link" href="#Index4">Video</a>
+                <a class="nav-link" href="#Index5">Integrantes</a>
+                <a class="nav-link" href="#Index6">Reseñas</a>
+            </div>
+        </div>
     </header>
 <!-- Descripción -->
 <section>
-    <h2>Descripción del Proyecto</h2>
+    <h2 id='Index1'>Descripción del Proyecto</h2>
     <p>
     Este proyecto consiste en el control de ángulo de una aguja mediante un motor DC,
     utilizando una Raspberry Pi Pico para el control. 
@@ -275,7 +303,7 @@
 
 <!-- Componentes -->
 <section>
-    <h2>Componentes</h2>
+    <h2 id='Index2'>Componentes</h2>
     <ul>
         <li>Raspberry Pi Pico</li>
         <li>Motor DC</li>
@@ -293,7 +321,7 @@
 
 <!-- Galeria de Imagenes -->
 <section>
-    <h2>Galería de Imágenes</h2>
+    <h2 id='Index3'>Galería de Imágenes</h2>
     <div class="carousel">
         <div class="carousel-container">
             <img src="FoTo/3.jpg" alt="Imagen 1">
@@ -319,7 +347,7 @@
 
 <!-- Video -->
 <section>
-    <h2>Video del Proyecto</h2>
+    <h2 id='Index4'>Video del Proyecto</h2>
     <p>A continuación puedes ver el video del proyecto en YouTube:</p>
     <div>
         <iframe src="https://www.youtube.com/embed/EmbxgZw8Rv4" allowfullscreen></iframe>
@@ -328,7 +356,7 @@
 
 <!-- Integrantes -->
 <section class="integrantes">
-    <h2 style="text-align: left;">Integrantes del Proyecto</h2>
+    <h2 id='Index5' style="text-align: left;">Integrantes del Proyecto</h2>
 
     <div class="integrante" >
         <h3 style="color: black; font-weight: bold;">Santiago Zacarías</h3>
@@ -406,7 +434,7 @@
 
 <!-- Reseñas -->
 <section>
-    <h2>Reseñas</h2>
+    <h2 id='Index6'>Reseñas</h2>
     <div class="reviews">
         <div class="review">
             <div class="profile">Elec_Volt - Estudiante de Ingeniería</div>
@@ -443,7 +471,7 @@
 </section>
 <!-- Escribe reseñas -->
 <section class="review-section">
-    <h2>Escribe tu Reseña</h2>
+    <h2 id='Index7'>Escribe tu Reseña</h2>
     <form id="review-form">
         <label for="name">Nombre:</label><br>
         <input type="text" id="name" name="name"placeholder="Nombre y Apellido" required><br><br>
