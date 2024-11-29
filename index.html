@@ -166,22 +166,92 @@
         footer p:nth-child(3) {
             text-align: right; /* Alinea el tercer elemento a la derecha */
         }
+        .review-section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-section h2, .review-section h3 {
+            color: #333;
+        }
+
+        #review-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #review-form input, #review-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        #review-form button {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        #review-form button:hover {
+            background-color: #555;
+        }
+
+        #review-list {
+            margin-top: 20px;
+        }
+
+        #review-list .review-item {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #review-list .review-item h4 {
+            margin: 0 0 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        #review-list .review-item .profession {
+            font-style: italic;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        #review-list .review-item p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <!-- Se separa el botón del contenido -->
-    <button class="reiniciar-btn" onclick="location.reload();">
-        <img src="FoTo\13.png" alt="Engranaje">
-    </button>
-    
-    <div>
-        <h1>Control PID de ángulo de motor con Raspberry Pi Pico</h1>
-        <p>Un proyecto para controlar la aguja mediante engranajes y un motor</p>
-    </div>
-</header>
-
+    <header>
+        <!-- Se separa el botón del contenido -->
+        <button class="reiniciar-btn" onclick="location.reload();">
+            <img src="FoTo\13.png" alt="Engranaje">
+        </button>
+        
+        <div>
+            <h1>Control PID de ángulo de motor con Raspberry Pi Pico</h1>
+            <p>Un proyecto para controlar la aguja mediante engranajes y un motor</p>
+        </div>
+    </header>
+<!-- Descripción -->
 <section>
     <h2>Descripción del Proyecto</h2>
     <p>
@@ -195,6 +265,7 @@
     </p>
 </section>
 
+<!-- Componentes -->
 <section>
     <h2>Componentes</h2>
     <ul>
@@ -212,6 +283,7 @@
     </ul>
 </section>
 
+<!-- Galeria de Imagenes -->
 <section>
     <h2>Galería de Imágenes</h2>
     <div class="carousel">
@@ -237,6 +309,7 @@
     </div>
 </section>
 
+<!-- Video -->
 <section>
     <h2>Video del Proyecto</h2>
     <p>A continuación puedes ver el video del proyecto en YouTube:</p>
@@ -245,47 +318,85 @@
     </div>
 </section>
 
+<!-- Integrantes -->
 <section class="integrantes">
-    <h2>Integrantes del Proyecto</h2>
-    <div class="integrante">
-        <h3>Santiago Zacarías</h3>
-        <ul>
+    <h2 style="text-align: left;">Integrantes del Proyecto</h2>
+
+    <div class="integrante" >
+        <h3 style="color: black; font-weight: bold;">Santiago Zacarías</h3>
+        <ul style="padding-left: 20px; list-style: disc;">
             <li>Realización de informes técnicos</li>
             <li>Documentación e investigación</li>
             <li>Fabricación de circuitos impresos</li>
         </ul>
+        <h5 style="color: #7f8c8d;">Contacto: <a href="mailto:jvignetta@gmail.com" style="text-decoration: none; color: #3498db;">santiagozacarias@mpatrq.com</a></h5>
+        <p>
+            <a href="https://github.com/joavig357" target="_blank" style="text-decoration: none; color: #2c3e50;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="20" height="25" alt="GitHub" style="vertical-align: middle; margin-right: 5px;" />
+                ZaCoso
+            </a>
+        </p>
     </div>
-    <div class="integrante">
-        <h3>Juan Montilla</h3>
-        <ul>
+    <div class="integrante" >
+        <h3 style="color: black; font-weight: bold;">Juan Montilla</h3>
+        <ul style="padding-left: 20px; list-style: disc;">
             <li>Diseño del código</li>
             <li>Ensayos estructurales y circuitales</li>
         </ul>
+        <h5 style="color: #7f8c8d;">Contacto: <a href="mailto:jvignetta@gmail.com" style="text-decoration: none; color: #3498db;">juanignaciomontilla@mpatrq.com</a></h5>
+        <p>
+            <a href="https://github.com/Monti3" target="_blank" style="text-decoration: none; color: #2c3e50;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="20" height="25" alt="GitHub" style="vertical-align: middle; margin-right: 5px;" />
+                Monti3
+            </a>
+        </p>
     </div>
-    <div class="integrante">
-        <h3>Juan Isola</h3>
-        <ul>
+    <div class="integrante" >
+        <h3 style="color: black; font-weight: bold;">Juan Isola</h3>
+        <ul style="padding-left: 20px; list-style: disc;">
             <li>Diseño de carcasa y engranajes</li>
             <li>Fabricación de ruedas y circuito</li>
         </ul>
+        <h5 style="color: #7f8c8d;">Contacto: <a href="mailto:jvignetta@gmail.com" style="text-decoration: none; color: #3498db;">juancruzisola@mpatrq.com</a></h5>
+        <p>
+            <a href="https://github.com/juanisola" target="_blank" style="text-decoration: none; color: #2c3e50;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="20" height="25" alt="GitHub" style="vertical-align: middle; margin-right: 5px;" />
+                juanisola
+            </a>
+        </p>
     </div>
-    <div class="integrante">
-        <h3>Rodrigo Lin</h3>
-        <ul>
+    <div class="integrante" >
+        <h3 style="color: black; font-weight: bold;">Rodrigo Lin</h3>
+        <ul style="padding-left: 20px; list-style: disc;">
             <li>Implementación del hardware (ensamblaje)</li>
             <li>Ensayos estructurales y circuitales</li>
             <li>Control de calidad de los componentes</li>
         </ul>
+        <h5 style="color: #7f8c8d;">Contacto: <a href="mailto:jvignetta@gmail.com" style="text-decoration: none; color: #3498db;">rodrigoalexislin@mpatrq.com</a></h5>
+        <p>
+            <a href="https://github.com/joavig357" target="_blank" style="text-decoration: none; color: #2c3e50;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="20" height="25" alt="GitHub" style="vertical-align: middle; margin-right: 5px;" />
+                ZaCoso
+            </a>
+        </p>
     </div>
-    <div class="integrante">
-        <h3>Selene Ramirez</h3>
-        <ul>
+    <div class="integrante" >
+        <h3 style="color: black; font-weight: bold;">Selene Ramirez</h3>
+        <ul style="padding-left: 20px; list-style: disc;">
             <li>Optimización de los componentes</li>
             <li>Puesta a punto</li>
         </ul>
+        <h5 style="color: #7f8c8d;">Contacto: <a href="mailto:jvignetta@gmail.com" style="text-decoration: none; color: #3498db;">selenenahirramirez@mpatrq.com</a></h5>
+        <p>
+            <a href="https://github.com/Ramirez-Selene" target="_blank" style="text-decoration: none; color: #2c3e50;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="20" height="25" alt="GitHub" style="vertical-align: middle; margin-right: 5px;" />
+                Ramirez-Selene
+            </a>
+        </p>
     </div>
 </section>
 
+<!-- Reseñas -->
 <section>
     <h2>Reseñas</h2>
     <div class="reviews">
@@ -322,6 +433,24 @@
         </div>
     </div>
 </section>
+<!-- Escribe reseñas -->
+<section class="review-section">
+    <h2>Escribe tu Reseña</h2>
+    <form id="review-form">
+        <label for="name">Nombre:</label><br>
+        <input type="text" id="name" name="name"placeholder="Nombre y Apellido" required><br><br>
+        
+        <label for="profession">Profesión:</label><br>
+        <input type="text" id="profession" name="profession" placeholder="Ingresa tu profesión" required><br><br>
+
+        <label for="review">Reseña:</label><br>
+        <textarea id="review" name="review" rows="4" required></textarea><br><br>
+        
+        <button type="submit">Enviar Reseña</button>
+    </form>
+    </div>
+</section>
+<!-- Footer -->
 <footer>
     <p>6°2da AV</p>
     <p>Comisión "B"</p>
