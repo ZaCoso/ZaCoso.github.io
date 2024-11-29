@@ -170,7 +170,7 @@
         }
         .review-section {
             padding: 20px;
-            margin: 20px;
+            margin-right: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -183,20 +183,46 @@
             color: #333;
         }
 
+        .review-section {
+            padding: 20px;
+            margin-right: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-section h2, .review-section h3 {
+            color: #333;
+        }
+
         #review-form {
             display: flex;
             flex-direction: column;
             gap: 10px;
             margin-right: 20px;
-
         }
 
-        #review-form input, #review-form textarea {
+        #review-form input, #review-form div, #review-form button {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        #review-form div {
+            min-height: 80px;        /* Altura mínima para el div editable */
+            position: relative;      /* Necesario para el pseudo-elemento */
+        }
+
+        #review-form div:empty::before {
+            content: attr(aria-placeholder); /* Usamos el texto del atributo como el placeholder */
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #aaa;  /* Estilo similar a los placeholders */
+            pointer-events: none; /* Evita que el texto sea seleccionable */
         }
 
         #review-form button {
@@ -208,6 +234,7 @@
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s;
+            margin-top: 10px;
         }
 
         #review-form button:hover {
@@ -243,6 +270,7 @@
             font-size: 14px;
             color: #555;
         }
+
         .navbar-collapse {
             width: 100%;             /* Asegura que el contenedor ocupe todo el ancho */
             display: flex;           /* Usamos Flexbox en el contenedor principal */
@@ -260,7 +288,22 @@
             color: #FFFFFF;             /* Cambiar el color si es necesario */
             font-weight: bold;       /* Añadir negrita si se desea */
         }
+        .review-box {
+            width: 100%;               /* Asegura que ocupe todo el ancho disponible */
+            min-height: 80px;          /* Establece la altura mínima */
+            border: 1px solid #ccc;    /* Borde para que se vea como un cuadro de texto */
+            padding: 10px;             /* Espacio interno para el texto */
+            overflow-y: auto;          /* Permite desplazarse si el contenido es más grande */
+            resize: none;              /* Deshabilita el redimensionamiento */
+        }
 
+        .review-box[contenteditable="true"]:empty:before {
+            content: attr(aria-placeholder);
+            color: #888;               /* Color del texto de sugerencia */
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -471,20 +514,19 @@
 </section>
 <!-- Escribe reseñas -->
 <section class="review-section">
-    <h2 id='Index7'>Escribe tu Reseña</h2>
+    <h2 id="Index7">Escribe tu Reseña</h2>
     <form id="review-form">
-        <label for="name">Nombre:</label><br>
-        <input type="text" id="name" name="name"placeholder="Nombre y Apellido" required><br><br>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" placeholder="Nombre y Apellido" required><br>
         
-        <label for="profession">Profesión:</label><br>
-        <input type="text" id="profession" name="profession" placeholder="Ingresa tu profesión" required><br><br>
+        <label for="profession">Profesión:</label>
+        <input type="text" id="profession" name="profession" placeholder="Ingresa tu profesión" required><br>
 
-        <label for="review">Reseña:</label><br>
-        <textarea id="review" name="review" rows="4" required></textarea><br><br>
+        <label for="review">Reseña:</label>
+        <div id="review" contenteditable="true" class="review-box" role="textbox" aria-placeholder="Escribe tu reseña aquí..." required></div>
         
         <button type="submit">Enviar Reseña</button>
     </form>
-    </div>
 </section>
 <!-- Footer -->
 <footer>
